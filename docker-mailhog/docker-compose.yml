@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  mailhog:
+    build:
+      context: ./image
+      dockerfile: Dockerfile
+    container_name: mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped

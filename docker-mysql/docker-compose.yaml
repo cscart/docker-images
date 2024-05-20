@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  mysql:
+    build:
+      context: ./image
+      dockerfile: Dockerfile
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql
+    restart: unless-stopped

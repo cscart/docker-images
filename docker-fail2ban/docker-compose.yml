@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  fail2ban:
+    build:
+      context: ./image
+      dockerfile: Dockerfile
+    container_name: fail2ban
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - "./data:/data"
+      - "/var/log:/var/log:ro"
+    env_file:
+      - "./fail2ban.env"
+    restart: always

@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  phpfpm:
+    build:
+      context: ./image
+      dockerfile: Dockerfile
+    container_name: phpfpm
+    restart: unless-stopped
+    volumes:
+      - ${CSCART_VOLUME}./cscart:/var/www/html:rw

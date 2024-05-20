@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  adminer:
+    build:
+      context: ./image
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    container_name: adminer
+    restart: unless-stopped

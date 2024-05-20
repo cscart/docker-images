@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+
+  nginx:
+    build:
+      context: ./image
+      dockerfile: Dockerfile
+    container_name: nginx
+    restart: unless-stopped
